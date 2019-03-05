@@ -12,157 +12,26 @@ confident I'll use again on future projects.
 
 Below are descriptions of stories I helped work on, along with code snippets and navigation links.  
 
+## Back End Stories
+* [Add Display Names](#add-display-names)
+* [Email Students Button Updates Database](#email-students-button-updates-database)
+* [Refactored Code](#refactored-code)
+
 ## Front End Stories
 * [Align Name Column](#align-name-column)
-
-## Back End Stories
-
-
-FRONT END STORIES
-
-### Align Name Column
-One of the first front end stories I worked on a small edit, aligning the name column from Center to the leftside of the table.
-
-	// Before
-			
-                    <td>
-                        <i class="@iStyle" style="font-size:14px;color:darkorange"></i>
-                    </td>
-                    <td class="text-center">
-                        @Html.DisplayFor(modelItem => item.StudentName)
-                    </td>
-               		
-               		
-
-	//After
-			<td>
-                        <i class="@iStyle" style="font-size:14px;color:darkorange"></i>
-                    </td>
-                    <td class="text-left">
-                        @Html.DisplayFor(modelItem => item.StudentName)
-                    </td>
+* [Move Email Button](#move-email-button)
+* [Added header to JPBulletins create view](#added-header-to-jpbulletins-create-view)
+* [Added Back to List Button](#added-back-to-list-button)
+* [Added Margins to View](#added-margins-to-view)
+* [Removed link from Index](#removed-link-from-index)
+* [Edit Student Drop Down](#edit-student-drop-down)
 
 
+# Back End Stories
 
-
-///// Move 'export student email addresses' button below Weekly Hires table. ///////
-
-       </tr>
-            }
-        </table>
-        @Html.ActionLink("Export Student Email Addresses", "ExportCSV", null, new { @class = "btn btn-primary" })
-    </div>
-</div>
--------------------------------------------------------------------------------------------------------------
-                </tr>
-            }
-        </table>
-        @Html.ActionLink("Export Student Email Addresses", "ExportCSV", null, new { @class = "btn btn-primary" })
-        
-    </div>
-</div>
-
-///// Added header to JPBulletins create view. ////////
-
-@model JobPlacementDashboard.Models.JPBulletin
-<h3>&nbsp;&nbsp;Create JP Bulletins</h3>
-<p><br /></p>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-                <option class="dropdown-item" value="1">JobPosting</option>
-                <option class="dropdown-item" value="2">Events</option>
-            </select>
-        <br/>
-        <br/>
-            <br />
-            <br />
-            @Html.ValidationMessageFor(model => model.BulletinCategoryEnum, "", new { @class = "text-danger" })
-        </div>
-            var textarea = document.getElementById("bulletinBody");
-            if (openTag && styleTag) {
-                let splitTag = openTag.split('>');
-                splitTag[0] = splitTag[0] + ' style="' + styleTag+'"';
-                splitTag[0] = splitTag[0] + ' style="' + styleTag + '"';
-                openTag = splitTag.join(">");
-            }
-            if (textarea.selectionStart != undefined) {
-        function handleFontSize(size) {
-            const fontStyle = "font-size: " + size + "px";
-            wrapText('<span>', '</span>', 'font-size: '+size+'px');
-            wrapText('<span>', '</span>', 'font-size: ' + size + 'px');
-        }
-        // Close the dropdown menu if the user clicks outside of it
-
-//////////////// Add Back to List button inline on JPChecklist Edit view ////////////////
-
-<div class="row">
-                    <div class="col-md-10 col-sm-3  col-xs-3 pt-20">
-                        <input type="submit" value="Save" class="btn btn-default" />
-                        <a href="../" class="btn btn-default inline">Back to List</a>
-                    </div>
-                </div>
-            </div>
-
-////////////// Added Margins to JPChecklists Index view /////////////////////////
-
-@model IEnumerable<JobPlacementDashboard.Models.JPChecklist>
-<div class="container">
-    <div class="col-sm-12">
-        <table class="table" align="center">
-            <tr>
-                <th>
-                <th></th>
-            </tr>
-@foreach (var item in Model) {
-            @foreach (var item in Model)
-            {
-                <tr class="text-center">
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)
-                        @Html.DisplayFor(modelItem => item.JpRoundTables)
-                    </td>
-                    <td>
-            <span class="font-20">@Html.ActionLink(HttpUtility.HtmlDecode("&#x270E;"), "Edit", new { id=item.JPChecklistid })</span> |         
-            <span class="font-20">@Html.ActionLink(HttpUtility.HtmlDecode("&#x1F5D1;"), "Delete", new { id=item.JPChecklistid })</span>
-                        <span class="font-20">@Html.ActionLink(HttpUtility.HtmlDecode("&#x270E;"), "Edit", new { id = item.JPChecklistid })</span> |
-                        <span class="font-20">@Html.ActionLink(HttpUtility.HtmlDecode("&#x1F5D1;"), "Delete", new { id = item.JPChecklistid })</span>
-                    </td>
-                </tr>
-            }
-        </table>
-    </div>
-</div>
-
-//////////// Removed 'Create New' link from JPChecklists Index ///////////////////
-
-@model IEnumerable<JobPlacementDashboard.Models.JPChecklist>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table" align="center">
-    <tr>
-        <th>
-
-////// Edit Student Drop Down "Create an Account" to "Create a JP Account"  ////////////////////
-
-                  <ul class="sub-menu">
-                                <li class="job-placement-dropdown-item">Student Dashboard</li>
-                                <li class="JPDropDown">@Html.ActionLink("Home", "Analytics", "Analytics")</li>
-                                <li class="JPDropDown">@Html.ActionLink("Create an Account", "Create", "JPStudents")</li>
-                                <li class="JPDropDown">@Html.ActionLink("Create a JP Account", "Create", "JPStudents")</li>
-                                <li class="JPDropDown">@Html.ActionLink("Networking", "Networking", "Networking")</li>
-                                <li class="JPDropDown">@Html.ActionLink("Bulletin", "Index", "JPBulletins")</li>
-                                @if (User.Identity.IsAuthenticated)
-                                {
-                                <li class="JPDropDown">
-                                    <a href="#">Log Data</a>
-                                    <ul class="sub-menu">
-
-Back End Stories
-
-////////// Add Display Names to JPCheclist.cs ///////////////
-
+### Add Display Names
+ to JPCheclist.cs
+//
 {
         public int JPChecklistid { get; set; }
         public string ApplicationUserid { get; set; }
@@ -179,7 +48,8 @@ Back End Stories
         [DisplayName("Round Tables")]
         public bool JpRoundTables { get; set; }
 
-/////////// Changeset 3016 - Make sure 'Email Students' button updates database (dB.LatestContact) ///
+### Email Students Button Updates Database
+(dB.LatestContact)
 
 JPNotificationsController.cs 
 
@@ -301,7 +171,9 @@ Updates.cshtml
         $(".dropdown-toggle").dropdown();
     </script>
 
-////////////  Refactored JPStudentController.cs ///////////
+### Refactored Code
+
+JPStudentController.cs 
 
 JPStudentRundownController.cs ------ BEFORE
 
@@ -468,6 +340,159 @@ Index.cshtml -- AFTER
 
 
 ////
+
+
+# FRONT END STORIES
+
+### Align Name Column
+One of the first front end stories I worked on was a small edit, aligning the name column from center to the leftside of the table. 
+
+	// Before
+			
+                    <td>
+                        <i class="@iStyle" style="font-size:14px;color:darkorange"></i>
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(modelItem => item.StudentName)
+                    </td>
+               		
+               		
+
+	//After
+			<td>
+                        <i class="@iStyle" style="font-size:14px;color:darkorange"></i>
+                    </td>
+                    <td class="text-left">
+                        @Html.DisplayFor(modelItem => item.StudentName)
+                    </td>
+
+
+
+
+### Move Email Button
+Another front end story I worked on was moving a button that would export student email addresses below the 'Weekly Hires' table.
+
+ Move 'export student email addresses' button below Weekly Hires table. 
+
+       </tr>
+            }
+        </table>
+        @Html.ActionLink("Export Student Email Addresses", "ExportCSV", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+-------------------------------------------------------------------------------------------------------------
+                </tr>
+            }
+        </table>
+        @Html.ActionLink("Export Student Email Addresses", "ExportCSV", null, new { @class = "btn btn-primary" })
+        
+    </div>
+</div>
+
+### Added header to JPBulletins create view
+
+ ////////
+
+@model JobPlacementDashboard.Models.JPBulletin
+<h3>&nbsp;&nbsp;Create JP Bulletins</h3>
+<p><br /></p>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+                <option class="dropdown-item" value="1">JobPosting</option>
+                <option class="dropdown-item" value="2">Events</option>
+            </select>
+        <br/>
+        <br/>
+            <br />
+            <br />
+            @Html.ValidationMessageFor(model => model.BulletinCategoryEnum, "", new { @class = "text-danger" })
+        </div>
+            var textarea = document.getElementById("bulletinBody");
+            if (openTag && styleTag) {
+                let splitTag = openTag.split('>');
+                splitTag[0] = splitTag[0] + ' style="' + styleTag+'"';
+                splitTag[0] = splitTag[0] + ' style="' + styleTag + '"';
+                openTag = splitTag.join(">");
+            }
+            if (textarea.selectionStart != undefined) {
+        function handleFontSize(size) {
+            const fontStyle = "font-size: " + size + "px";
+            wrapText('<span>', '</span>', 'font-size: '+size+'px');
+            wrapText('<span>', '</span>', 'font-size: ' + size + 'px');
+        }
+        // Close the dropdown menu if the user clicks outside of it
+
+### Added Back to List Button
+//////////////// Add Back to List button inline on JPChecklist Edit view ////////////////
+
+<div class="row">
+                    <div class="col-md-10 col-sm-3  col-xs-3 pt-20">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                        <a href="../" class="btn btn-default inline">Back to List</a>
+                    </div>
+                </div>
+            </div>
+
+### Added Margins to View
+////////////// Added Margins to JPChecklists Index view /////////////////////////
+
+@model IEnumerable<JobPlacementDashboard.Models.JPChecklist>
+<div class="container">
+    <div class="col-sm-12">
+        <table class="table" align="center">
+            <tr>
+                <th>
+                <th></th>
+            </tr>
+@foreach (var item in Model) {
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName)
+                        @Html.DisplayFor(modelItem => item.JpRoundTables)
+                    </td>
+                    <td>
+            <span class="font-20">@Html.ActionLink(HttpUtility.HtmlDecode("&#x270E;"), "Edit", new { id=item.JPChecklistid })</span> |         
+            <span class="font-20">@Html.ActionLink(HttpUtility.HtmlDecode("&#x1F5D1;"), "Delete", new { id=item.JPChecklistid })</span>
+                        <span class="font-20">@Html.ActionLink(HttpUtility.HtmlDecode("&#x270E;"), "Edit", new { id = item.JPChecklistid })</span> |
+                        <span class="font-20">@Html.ActionLink(HttpUtility.HtmlDecode("&#x1F5D1;"), "Delete", new { id = item.JPChecklistid })</span>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+### Removed link from Index
+//////////// Removed 'Create New' link from JPChecklists Index ///////////////////
+
+@model IEnumerable<JobPlacementDashboard.Models.JPChecklist>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" align="center">
+    <tr>
+        <th>
+
+### Edit Student Drop Down
+////// Edit Student Drop Down "Create an Account" to "Create a JP Account"  ////////////////////
+
+                  <ul class="sub-menu">
+                                <li class="job-placement-dropdown-item">Student Dashboard</li>
+                                <li class="JPDropDown">@Html.ActionLink("Home", "Analytics", "Analytics")</li>
+                                <li class="JPDropDown">@Html.ActionLink("Create an Account", "Create", "JPStudents")</li>
+                                <li class="JPDropDown">@Html.ActionLink("Create a JP Account", "Create", "JPStudents")</li>
+                                <li class="JPDropDown">@Html.ActionLink("Networking", "Networking", "Networking")</li>
+                                <li class="JPDropDown">@Html.ActionLink("Bulletin", "Index", "JPBulletins")</li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                <li class="JPDropDown">
+                                    <a href="#">Log Data</a>
+                                    <ul class="sub-menu">
+
+
 
 
 
