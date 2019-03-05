@@ -30,10 +30,10 @@ Below are descriptions of stories I helped work on, along with code snippets and
 # Back End Stories
 
 ### Add Display Names
-First back end story I took a stab at was adding display names to the JPCheclist.cs
+First back end story I took a stab at was adding display names to the JPChecklist.cs
 
-```
-{
+```DisplayName
+
         public int JPChecklistid { get; set; }
         public string ApplicationUserid { get; set; }
         [DisplayName("Business Cards")]
