@@ -13,34 +13,34 @@ confident I'll use again on future projects.
 Below are descriptions of stories I helped work on, along with code snippets and navigation links.  
 
 ## Front End Stories
-* [Align Name Column on JPStudentsRundown](#align-name-column-on-jpstudentrundown-to-the-leftside)
+* [Align Name Column](#align-name-column)
 
 ## Back End Stories
 
 
 FRONT END STORIES
 
-### Align Name Column on JPStudentsRundown to the Leftside
+### Align Name Column
 One of the first front end stories I worked on a small edit, aligning the name column from Center to the leftside of the table.
 
 	// Before
-			<td>
+			
+                        <td>
                         <i class="@iStyle" style="font-size:14px;color:darkorange"></i>
-                    	</td>
-                    <td class="text-center">                     
+                    </td>
+                    <td class="text-center">
                         @Html.DisplayFor(modelItem => item.StudentName)
                     </td>
                		
+               		
 
 	//After
-			
-                        <td>
-                        	<i class="@iStyle" style="font-size:14px;color:darkorange"></i>
-                    	</td>
-                    	<td class="text-left">                     
+			<td>
+                        <i class="@iStyle" style="font-size:14px;color:darkorange"></i>
+                    </td>
+                    <td class="text-left">
                         @Html.DisplayFor(modelItem => item.StudentName)
-                    	</td>
-               		
+                    </td>
 
 
 
