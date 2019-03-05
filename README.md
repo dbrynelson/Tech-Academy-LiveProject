@@ -32,7 +32,7 @@ Below are descriptions of stories I helped work on, along with code snippets and
 ### Add Display Names
 First back end story I took a stab at was adding display names to the JPChecklist.cs
 
-```DisplayName
+```csharp
 
         public int JPChecklistid { get; set; }
         public string ApplicationUserid { get; set; }
@@ -51,10 +51,7 @@ First back end story I took a stab at was adding display names to the JPChecklis
 ```
 
 ### Email Students Button Updates Database
-(dB.LatestContact)
-
-JPNotificationsController.cs 
-
+```csharp
 // open email link
             return Redirect(email);
         }
@@ -82,9 +79,9 @@ JPNotificationsController.cs
         }
         protected override void Dispose(bool disposing)
         {
-
+```
 Helper.cs
-
+```csharp
 			
     public static class EmailHelper
     {
@@ -146,10 +143,10 @@ Helper.cs
     public static class DateCalculateHelper
     {
         public static bool? CalculateIsObjectCreatedWithinOneWeekOfCurrentDate(DateTime? objectCreatedDate)
-
+```
 Updates.cshtml 
 
-			
+```			
                         </td>
                     </tr>
                 }
@@ -172,13 +169,10 @@ Updates.cshtml
     <script type="text/javascript">
         $(".dropdown-toggle").dropdown();
     </script>
-
+```
 ### Refactored Code
 
-JPStudentController.cs 
-
-JPStudentRundownController.cs ------ BEFORE
-
+```csharp
 public ViewResult Index(string sortOrder, string searchString, string latestContact)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -239,13 +233,9 @@ public ViewResult Index(string sortOrder, string searchString, string latestCont
             //In the future if this call is made via Ajax and no return is needed, just delete return and change type to void.
         }
         //Counts the total of completed items in JPChecklists table
-
-
-
-
-JPStudentRundownController.cs --- AFTER
-
-		
+```
+After
+```csharp		
         public ViewResult Index(string sortOrder, string searchString, string latestContact)
         {
             var students = from s in db.JPStudents
@@ -301,9 +291,9 @@ JPStudentRundownController.cs --- AFTER
             EmailHelper.UpdateAndBcc(emailList);
             return RedirectToAction("Index");
         }
+```
 
-
-Index.cshtml --- BEFORE 
+```
 
  $(".dropdown-toggle").dropdown();
     </script>
@@ -320,10 +310,10 @@ Index.cshtml --- BEFORE
                     document.getElementById("submit-email").submit();
                 }
                 else {
-
+```
 
 Index.cshtml -- AFTER
-
+```
  $(".dropdown-toggle").dropdown();
     </script>
     <!-- JS to toggle radio options when email button clicked-->
@@ -339,11 +329,7 @@ Index.cshtml -- AFTER
                     document.getElementById("submit-email").submit();
                 }
                 else {
-
-
-////
-
-
+```
 # FRONT END STORIES
 
 ### Align Name Column
@@ -375,14 +361,15 @@ One of the first front end stories I worked on was a small edit, aligning the na
 Another front end story I worked on was moving a button that would export student email addresses below the 'Weekly Hires' table.
 
  Move 'export student email addresses' button below Weekly Hires table. 
-
+```html
        </tr>
             }
         </table>
         @Html.ActionLink("Export Student Email Addresses", "ExportCSV", null, new { @class = "btn btn-primary" })
     </div>
 </div>
--------------------------------------------------------------------------------------------------------------
+```
+```html
                 </tr>
             }
         </table>
@@ -390,11 +377,9 @@ Another front end story I worked on was moving a button that would export studen
         
     </div>
 </div>
-
+```
 ### Added header to JPBulletins create view
-
- ////////
-
+```
 @model JobPlacementDashboard.Models.JPBulletin
 <h3>&nbsp;&nbsp;Create JP Bulletins</h3>
 <p><br /></p>
@@ -424,10 +409,10 @@ Another front end story I worked on was moving a button that would export studen
             wrapText('<span>', '</span>', 'font-size: ' + size + 'px');
         }
         // Close the dropdown menu if the user clicks outside of it
-
+```
 ### Added Back to List Button
-//////////////// Add Back to List button inline on JPChecklist Edit view ////////////////
-
+ Add Back to List button inline on JPChecklist Edit view 
+```html
 <div class="row">
                     <div class="col-md-10 col-sm-3  col-xs-3 pt-20">
                         <input type="submit" value="Save" class="btn btn-default" />
@@ -435,10 +420,10 @@ Another front end story I worked on was moving a button that would export studen
                     </div>
                 </div>
             </div>
-
+```
 ### Added Margins to View
-////////////// Added Margins to JPChecklists Index view /////////////////////////
-
+ Added Margins to JPChecklists Index view 
+```html
 @model IEnumerable<JobPlacementDashboard.Models.JPChecklist>
 <div class="container">
     <div class="col-sm-12">
@@ -466,10 +451,10 @@ Another front end story I worked on was moving a button that would export studen
         </table>
     </div>
 </div>
-
+```
 ### Removed link from Index
-//////////// Removed 'Create New' link from JPChecklists Index ///////////////////
-
+ Removed 'Create New' link from JPChecklists Index 
+```html
 @model IEnumerable<JobPlacementDashboard.Models.JPChecklist>
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -477,10 +462,10 @@ Another front end story I worked on was moving a button that would export studen
 <table class="table" align="center">
     <tr>
         <th>
-
+```
 ### Edit Student Drop Down
-////// Edit Student Drop Down "Create an Account" to "Create a JP Account"  ////////////////////
-
+ Edit Student Drop Down "Create an Account" to "Create a JP Account"  
+```html
                   <ul class="sub-menu">
                                 <li class="job-placement-dropdown-item">Student Dashboard</li>
                                 <li class="JPDropDown">@Html.ActionLink("Home", "Analytics", "Analytics")</li>
@@ -493,6 +478,7 @@ Another front end story I worked on was moving a button that would export studen
                                 <li class="JPDropDown">
                                     <a href="#">Log Data</a>
                                     <ul class="sub-menu">
+```
 
 
 
