@@ -30,8 +30,9 @@ Below are descriptions of stories I helped work on, along with code snippets and
 # Back End Stories
 
 ### Add Display Names
- to JPCheclist.cs
-//
+First back end story I took a stab at was adding display names to the JPCheclist.cs
+
+
 {
         public int JPChecklistid { get; set; }
         public string ApplicationUserid { get; set; }
