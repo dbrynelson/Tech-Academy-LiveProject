@@ -48,6 +48,7 @@ First back end story I took a stab at was adding display names to the JPCheclist
         public bool JPCleanGitHub { get; set; }
         [DisplayName("Round Tables")]
         public bool JpRoundTables { get; set; }
+```
 
 ### Email Students Button Updates Database
 (dB.LatestContact)
