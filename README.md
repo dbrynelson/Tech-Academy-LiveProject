@@ -25,7 +25,7 @@ One of the first front end stories I worked on a small edit, aligning the name c
 
 	// Before
 			
-                        <td>
+                    <td>
                         <i class="@iStyle" style="font-size:14px;color:darkorange"></i>
                     </td>
                     <td class="text-center">
