@@ -152,7 +152,7 @@ Helper.cs
 ```
 Updates.cshtml 
 
-```			
+```html			
                         </td>
                     </tr>
                 }
@@ -243,7 +243,7 @@ public ViewResult Index(string sortOrder, string searchString, string latestCont
 ```
 Index.cshtml Before
 
-```
+```html
 
  $(".dropdown-toggle").dropdown();
     </script>
@@ -324,7 +324,7 @@ After
 
 
 Index.cshtml -- AFTER
-```
+```html
  $(".dropdown-toggle").dropdown();
     </script>
     <!-- JS to toggle radio options when email button clicked-->
@@ -393,9 +393,9 @@ Another front end story I worked on was moving a button that would export studen
 ### Added header to JPBulletins create view
 For this particular story, I was tasked with adding a header to the  view.
 
-```
+```html
 @model JobPlacementDashboard.Models.JPBulletin
-**<h3>&nbsp;&nbsp;Create JP Bulletins</h3>**
+<h3>&nbsp;&nbsp;Create JP Bulletins</h3>
 <p><br /></p>
 @using (Html.BeginForm())
 {
