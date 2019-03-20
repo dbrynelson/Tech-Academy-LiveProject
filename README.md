@@ -12,7 +12,7 @@ confident I'll use again on future projects.
 
 Below are descriptions of stories I helped work on, along with code snippets and navigation links.  
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills)*
 
 ## Back End Stories
 * [Add Display Names](#add-display-names)
@@ -43,7 +43,7 @@ JPChecklist.cs
         public bool JpRoundTables { get; set; }
 ```
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Email Students Button Updates Database
 
@@ -170,7 +170,7 @@ Updates.cshtml
     </script>
 ```
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Refactored Code
 After developing the EmailHelper to the project, the next story I grabbed asked to refactor some of the code on another part of the project by using the EmailHelper.  Below is a snippet of the controller containing the methods used for this particular view, followed by the snippet of the view that called these functons.
@@ -335,7 +335,7 @@ Index.cshtml -- AFTER
                 }
                 else {
 ```
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ## Front End Stories
 * [Align Name Column](#align-name-column)
@@ -370,7 +370,7 @@ One of the first front end stories I worked on was a small edit, aligning the na
                     </td>
 
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Move Email Button
 Another front end story I worked on was moving a button that would export student email addresses below the 'Weekly Hires' table.
@@ -394,7 +394,7 @@ Another front end story I worked on was moving a button that would export studen
 </div>
 ```
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Added header to JPBulletins create view
 For this particular story, I was tasked with adding a header to the view.
@@ -431,7 +431,7 @@ For this particular story, I was tasked with adding a header to the view.
         // Close the dropdown menu if the user clicks outside of it
 ```
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Added Back to List Button Inline
 This story required that I add a button to the view inline with the table that would return the user back to a previous page. 
@@ -446,7 +446,7 @@ This story required that I add a button to the view inline with the table that w
             </div>
 ```
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Added Margins to View
  Added Margins to JPChecklists Index view 
@@ -480,7 +480,7 @@ This story required that I add a button to the view inline with the table that w
 </div>
 ```
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Removed link from Index
 For this story I was tasked with removing the 'Create New' link.  Below is a snippet of the code which I deleted from the view.
@@ -495,7 +495,7 @@ For this story I was tasked with removing the 'Create New' link.  Below is a sni
         <th>
 ```
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Edit Student Drop Down
 This story simply wanted the drop down menu edited from 'Create an Account' to 'Create a JP Account'.  In the snippet below, you can see both options, the 'Create an Account' which was edited to 'Create a JP Account'.
@@ -515,7 +515,7 @@ This story simply wanted the drop down menu edited from 'Create an Account' to '
                                     <ul class="sub-menu">
 ```
 
-*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Other Skills
 
