@@ -12,22 +12,13 @@ confident I'll use again on future projects.
 
 Below are descriptions of stories I helped work on, along with code snippets and navigation links.  
 
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned)*
+
 ## Back End Stories
 * [Add Display Names](#add-display-names)
 * [Email Students Button Updates Database](#email-students-button-updates-database)
 * [Refactored Code](#refactored-code)
 
-## Front End Stories
-* [Align Name Column](#align-name-column)
-* [Move Email Button](#move-email-button)
-* [Added header to JPBulletins create view](#added-header-to-jpbulletins-create-view)
-* [Added Back to List Button](#added-back-to-list-button)
-* [Added Margins to View](#added-margins-to-view)
-* [Removed link from Index](#removed-link-from-index)
-* [Edit Student Drop Down](#edit-student-drop-down)
-
-
-# Back End Stories
 
 ### Add Display Names
 For one of the first back end stories I worked on was adding DisplayName property. Using this attribute allows us to cnotrol how the text is rendered on the view.  In the snippet below, you can see where I added the DisplayName attribute and the name that was desired to show up on the view. 
@@ -51,6 +42,8 @@ JPChecklist.cs
         [DisplayName("Round Tables")]
         public bool JpRoundTables { get; set; }
 ```
+
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
 
 ### Email Students Button Updates Database
 
@@ -176,6 +169,9 @@ Updates.cshtml
         $(".dropdown-toggle").dropdown();
     </script>
 ```
+
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+
 ### Refactored Code
 After developing the EmailHelper to the project, the next story I grabbed asked to refactor some of the code on another part of the project by using the EmailHelper.  Below is a snippet of the controller containing the methods used for this particular view, followed by the snippet of the view that called these functons.
 
@@ -321,8 +317,6 @@ After
         }
 ```
 
-
-
 Index.cshtml -- AFTER
 ```html
  $(".dropdown-toggle").dropdown();
@@ -341,8 +335,17 @@ Index.cshtml -- AFTER
                 }
                 else {
 ```
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
 
-# FRONT END STORIES
+## Front End Stories
+* [Align Name Column](#align-name-column)
+* [Move Email Button](#move-email-button)
+* [Added header to JPBulletins create view](#added-header-to-jpbulletins-create-view)
+* [Added Back to List Button](#added-back-to-list-button)
+* [Added Margins to View](#added-margins-to-view)
+* [Removed link from Index](#removed-link-from-index)
+* [Edit Student Drop Down](#edit-student-drop-down)
+
 
 ### Align Name Column
 One of the first front end stories I worked on was a small edit, aligning the name column from center to the leftside of the table. 
@@ -367,7 +370,7 @@ One of the first front end stories I worked on was a small edit, aligning the na
                     </td>
 
 
-
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
 
 ### Move Email Button
 Another front end story I worked on was moving a button that would export student email addresses below the 'Weekly Hires' table.
@@ -390,8 +393,11 @@ Another front end story I worked on was moving a button that would export studen
     </div>
 </div>
 ```
+
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+
 ### Added header to JPBulletins create view
-For this particular story, I was tasked with adding a header to the  view.
+For this particular story, I was tasked with adding a header to the view.
 
 ```html
 @model JobPlacementDashboard.Models.JPBulletin
@@ -424,8 +430,12 @@ For this particular story, I was tasked with adding a header to the  view.
         }
         // Close the dropdown menu if the user clicks outside of it
 ```
-### Added Back to List Button
- Add Back to List button inline on JPChecklist Edit view 
+
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+
+### Added Back to List Button Inline
+This story required that I add a button to the view inline with the table that would return the user back to a previous page. 
+
 ```html
 <div class="row">
                     <div class="col-md-10 col-sm-3  col-xs-3 pt-20">
@@ -435,6 +445,9 @@ For this particular story, I was tasked with adding a header to the  view.
                 </div>
             </div>
 ```
+
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+
 ### Added Margins to View
  Added Margins to JPChecklists Index view 
 ```html
@@ -466,8 +479,12 @@ For this particular story, I was tasked with adding a header to the  view.
     </div>
 </div>
 ```
+
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+
 ### Removed link from Index
- Removed 'Create New' link from JPChecklists Index 
+For this story I was tasked with removing the 'Create New' link.  Below is a snippet of the code which I deleted from the view.
+ 
 ```html
 @model IEnumerable<JobPlacementDashboard.Models.JPChecklist>
 <p>
@@ -477,8 +494,12 @@ For this particular story, I was tasked with adding a header to the  view.
     <tr>
         <th>
 ```
+
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
+
 ### Edit Student Drop Down
- Edit Student Drop Down "Create an Account" to "Create a JP Account"  
+This story simply wanted the drop down menu edited from 'Create an Account' to 'Create a JP Account'.  In the snippet below, you can see both options, the 'Create an Account' which was edited to 'Create a JP Account'.
+
 ```html
                   <ul class="sub-menu">
                                 <li class="job-placement-dropdown-item">Student Dashboard</li>
@@ -494,9 +515,9 @@ For this particular story, I was tasked with adding a header to the  view.
                                     <ul class="sub-menu">
 ```
 
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
 
-
-
+### Other Skills
 
 
 
