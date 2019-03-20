@@ -30,7 +30,9 @@ Below are descriptions of stories I helped work on, along with code snippets and
 # Back End Stories
 
 ### Add Display Names
-First back end story I took a stab at was adding display names to the JPChecklist.cs
+For one of the first back end stories I worked on was adding DisplayName property. Using this attribute allows us to cnotrol how the text is rendered on the view.  In the snippet below, you can see where I added the DisplayName attribute and the name that was desired to show up on the view. 
+
+JPChecklist.cs
 
 ```csharp
 
@@ -51,6 +53,9 @@ First back end story I took a stab at was adding display names to the JPChecklis
 ```
 
 ### Email Students Button Updates Database
+
+One of the more intricate stories I got to work on was taking a simple button on one particular page that would E-mail all students. The project needed the particular button to not only email all the students but also update the database telling it when someone used that option.  At first I was having difficulty determining how I might go about doing that.  I thought I might use Razor syntax to to this, I also looked at javascript and rewriting a whole new function to do this.  But when looking at some of the other pages on the project I noticed some e-mail buttons were already performing these tasks and I just needed to apply this to this button as well.  However, it was quite a bit of code being added, and kind of cluttered. I determined that I could add a new method to the Helper that could be used accross the project and also tidy up and simplify some code throughout the project. So I created the EmailHelper which took functions that retrieved a list of student emails, update the database with when it was most recently used, updated the database and blind copied all the students email addresses, and then send the email to all the students. In the snippet below, you can see where I added the EmailHelper method one of the controllers.  Below that is the snippet from the Helper file that shows the methods that make up the EmailHelper so that it can be used across the entire project and keep things simple and tidy.  After the helper.cs snippet is the snippet from the view where the button was displayed.  
+
 ```csharp
 // open email link
             return Redirect(email);
@@ -81,6 +86,7 @@ First back end story I took a stab at was adding display names to the JPChecklis
         {
 ```
 Helper.cs
+
 ```csharp
 			
     public static class EmailHelper
@@ -171,6 +177,7 @@ Updates.cshtml
     </script>
 ```
 ### Refactored Code
+After developing the EmailHelper to the project, the next story I grabbed asked to refactor some of the code on another part of the project by using the EmailHelper.  Below is a snippet of the controller containing the methods used for this particular view, followed by the snippet of the view that called these functons.
 
 ```csharp
 public ViewResult Index(string sortOrder, string searchString, string latestContact)
@@ -234,6 +241,27 @@ public ViewResult Index(string sortOrder, string searchString, string latestCont
         }
         //Counts the total of completed items in JPChecklists table
 ```
+Index.cshtml Before
+
+```
+
+ $(".dropdown-toggle").dropdown();
+    </script>
+    <!-- JS to toggle radio options when email button clicked-->
+    <script type="text/javascript">
+        $("#email-students-popup").hide();
+            radioInput = $("input[name='email']:checked").val();
+            if (radioInput == "graduating") {
+                    $("#submit-form").attr("action", "@Html.Raw(@Url.Action("UpdateAndBcc", "JPStudentRundown", new { emailList = emailList , body = gradBody }))" );
+                    document.getElementById("submit-email").submit();
+                }
+                else if (radioInput == "applying") {
+                    $("#submit-form").attr("action", "@Html.Raw(@Url.Action("UpdateAndBcc", "JPStudentRundown", new { emailList =emailList, body = applyBody }))" );
+                    document.getElementById("submit-email").submit();
+                }
+                else {
+```
+
 After
 ```csharp		
         public ViewResult Index(string sortOrder, string searchString, string latestContact)
@@ -293,24 +321,7 @@ After
         }
 ```
 
-```
 
- $(".dropdown-toggle").dropdown();
-    </script>
-    <!-- JS to toggle radio options when email button clicked-->
-    <script type="text/javascript">
-        $("#email-students-popup").hide();
-            radioInput = $("input[name='email']:checked").val();
-            if (radioInput == "graduating") {
-                    $("#submit-form").attr("action", "@Html.Raw(@Url.Action("UpdateAndBcc", "JPStudentRundown", new { emailList = emailList , body = gradBody }))" );
-                    document.getElementById("submit-email").submit();
-                }
-                else if (radioInput == "applying") {
-                    $("#submit-form").attr("action", "@Html.Raw(@Url.Action("UpdateAndBcc", "JPStudentRundown", new { emailList =emailList, body = applyBody }))" );
-                    document.getElementById("submit-email").submit();
-                }
-                else {
-```
 
 Index.cshtml -- AFTER
 ```
@@ -330,6 +341,7 @@ Index.cshtml -- AFTER
                 }
                 else {
 ```
+
 # FRONT END STORIES
 
 ### Align Name Column
@@ -379,9 +391,11 @@ Another front end story I worked on was moving a button that would export studen
 </div>
 ```
 ### Added header to JPBulletins create view
+For this particular story, I was tasked with adding a header to the  view.
+
 ```
 @model JobPlacementDashboard.Models.JPBulletin
-<h3>&nbsp;&nbsp;Create JP Bulletins</h3>
+**<h3>&nbsp;&nbsp;Create JP Bulletins</h3>**
 <p><br /></p>
 @using (Html.BeginForm())
 {
