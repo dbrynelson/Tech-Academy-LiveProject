@@ -21,7 +21,7 @@ Below are descriptions of stories I helped work on, along with code snippets and
 
 
 ### Add Display Names
-For one of the first back end stories I worked on was adding DisplayName property. Using this attribute allows us to cnotrol how the text is rendered on the view.  In the snippet below, you can see where I added the DisplayName attribute and the name that was desired to show up on the view. 
+For one of the first back end stories I worked on was adding DisplayName property. Using this attribute allows us to control how the text is rendered on the view.  In the snippet below, you can see where I added the DisplayName attribute and the name that was desired to show up on the view. 
 
 JPChecklist.cs
 
@@ -375,7 +375,7 @@ One of the first front end stories I worked on was a small edit, aligning the na
 ### Move Email Button
 Another front end story I worked on was moving a button that would export student email addresses below the 'Weekly Hires' table.
 
- Move 'export student email addresses' button below Weekly Hires table. 
+ 
 ```html
        </tr>
             }
@@ -384,16 +384,6 @@ Another front end story I worked on was moving a button that would export studen
     </div>
 </div>
 ```
-```html
-                </tr>
-            }
-        </table>
-        @Html.ActionLink("Export Student Email Addresses", "ExportCSV", null, new { @class = "btn btn-primary" })
-        
-    </div>
-</div>
-```
-
 *Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Added header to JPBulletins create view
@@ -401,34 +391,9 @@ For this particular story, I was tasked with adding a header to the view.
 
 ```html
 @model JobPlacementDashboard.Models.JPBulletin
-<h3>&nbsp;&nbsp;Create JP Bulletins</h3>
+<h3>Create JP Bulletins</h3>
 <p><br /></p>
 @using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-                <option class="dropdown-item" value="1">JobPosting</option>
-                <option class="dropdown-item" value="2">Events</option>
-            </select>
-        <br/>
-        <br/>
-            <br />
-            <br />
-            @Html.ValidationMessageFor(model => model.BulletinCategoryEnum, "", new { @class = "text-danger" })
-        </div>
-            var textarea = document.getElementById("bulletinBody");
-            if (openTag && styleTag) {
-                let splitTag = openTag.split('>');
-                splitTag[0] = splitTag[0] + ' style="' + styleTag+'"';
-                splitTag[0] = splitTag[0] + ' style="' + styleTag + '"';
-                openTag = splitTag.join(">");
-            }
-            if (textarea.selectionStart != undefined) {
-        function handleFontSize(size) {
-            const fontStyle = "font-size: " + size + "px";
-            wrapText('<span>', '</span>', 'font-size: '+size+'px');
-            wrapText('<span>', '</span>', 'font-size: ' + size + 'px');
-        }
-        // Close the dropdown menu if the user clicks outside of it
 ```
 
 *Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
@@ -449,7 +414,8 @@ This story required that I add a button to the view inline with the table that w
 *Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Added Margins to View
- Added Margins to JPChecklists Index view 
+ For this story, it was asked to add margins to this particular view.  To do so I added the code "col-sm-12". This is a styling effect used in bootstrap that sets the width to the size of the screen with padding to the outer div container.  It's also flexible when downsizing screens from computer to mobile for example.
+ 
 ```html
 @model IEnumerable<JobPlacementDashboard.Models.JPChecklist>
 <div class="container">
@@ -498,13 +464,27 @@ For this story I was tasked with removing the 'Create New' link.  Below is a sni
 *Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 ### Edit Student Drop Down
-This story simply wanted the drop down menu edited from 'Create an Account' to 'Create a JP Account'.  In the snippet below, you can see both options, the 'Create an Account' which was edited to 'Create a JP Account'.
+This story tasked with editing the drop down menu from 'Create an Account' to 'Create a JP Account'.  In the snippet below, you can see both options, the 'Create an Account' which was edited to 'Create a JP Account'.
 
+Before
 ```html
                   <ul class="sub-menu">
                                 <li class="job-placement-dropdown-item">Student Dashboard</li>
                                 <li class="JPDropDown">@Html.ActionLink("Home", "Analytics", "Analytics")</li>
                                 <li class="JPDropDown">@Html.ActionLink("Create an Account", "Create", "JPStudents")</li>
+                                <li class="JPDropDown">@Html.ActionLink("Networking", "Networking", "Networking")</li>
+                                <li class="JPDropDown">@Html.ActionLink("Bulletin", "Index", "JPBulletins")</li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                <li class="JPDropDown">
+                                    <a href="#">Log Data</a>
+                                    <ul class="sub-menu">
+```
+After
+```html
+           <ul class="sub-menu">
+                                <li class="job-placement-dropdown-item">Student Dashboard</li>
+                                <li class="JPDropDown">@Html.ActionLink("Home", "Analytics", "Analytics")</li>
                                 <li class="JPDropDown">@Html.ActionLink("Create a JP Account", "Create", "JPStudents")</li>
                                 <li class="JPDropDown">@Html.ActionLink("Networking", "Networking", "Networking")</li>
                                 <li class="JPDropDown">@Html.ActionLink("Bulletin", "Index", "JPBulletins")</li>
@@ -519,6 +499,12 @@ This story simply wanted the drop down menu edited from 'Create an Account' to '
 
 ### Other Skills
 
+* Teaming with a group of developers working to identify both front-end and back-end issues/bugs and finding solutions to improve usability and efficieny in an application.
+* Attending stand-up meetings physically and remotely, discussing any questions or concerns with team members to improve overall organization and communication.
+* Practice with Team/Pair Programming when a developer has issues solving a particular problem.
+	* When working on Helper for the website, I worked with another developer who had previously worked on a similar story.  We worked via shared screen to talk out and show one another the problems we faced and what we thought could be potential solutions.
+	
+*Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills), [Page Top](#live-project)*
 
 
     
